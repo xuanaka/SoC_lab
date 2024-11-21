@@ -12,9 +12,9 @@ entity Dual4DigitCounter is
         up1        : in  STD_LOGIC;                      -- 第一計數器方向，高為加，低為減
         up2        : in  STD_LOGIC;                      -- 第二計數器方向，高為加，低為減
         start1     : in  INTEGER range 0 to 9999;        -- 第一計數器起始值
-        end_val1   : in  INTEGER range 0 to 9999;        -- 第一計數器結束值
+        end1       : in  INTEGER range 0 to 9999;        -- 第一計數器結束值
         start2     : in  INTEGER range 0 to 9999;        -- 第二計數器起始值
-        end_val2   : in  INTEGER range 0 to 9999;        -- 第二計數器結束值
+        end2       : in  INTEGER range 0 to 9999;        -- 第二計數器結束值
         count1     : out INTEGER range 0 to 9999;        -- 第一計數器當前值
         count2     : out INTEGER range 0 to 9999         -- 第二計數器當前值
     );
@@ -34,14 +34,14 @@ begin
             -- 第一計數器邏輯
             if enable1 = '1' then
                 if up1 = '1' then
-                    if current_count1 + 1 > end_val1 then
+                    if current_count1 + 1 > end1 then
                         current_count1 <= start1; -- 回到起始值
                     else
                         current_count1 <= current_count1 + 1;
                     end if;
                 else
                     if current_count1 - 1 < start1 then
-                        current_count1 <= end_val1; -- 回到結束值
+                        current_count1 <= end1; -- 回到結束值
                     else
                         current_count1 <= current_count1 - 1;
                     end if;
@@ -51,14 +51,14 @@ begin
             -- 第二計數器邏輯
             if enable2 = '1' then
                 if up2 = '1' then
-                    if current_count2 + 1 > end_val2 then
+                    if current_count2 + 1 > end2 then
                         current_count2 <= start2; -- 回到起始值
                     else
                         current_count2 <= current_count2 + 1;
                     end if;
                 else
                     if current_count2 - 1 < start2 then
-                        current_count2 <= end_val2; -- 回到結束值
+                        current_count2 <= end2; -- 回到結束值
                     else
                         current_count2 <= current_count2 - 1;
                     end if;

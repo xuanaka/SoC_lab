@@ -17,9 +17,9 @@ architecture Behavioral of Test_Dual4DigitCounter is
             up1        : in  STD_LOGIC;
             up2        : in  STD_LOGIC;
             start1     : in  INTEGER range 0 to 9999;
-            end_val1   : in  INTEGER range 0 to 9999;
+            end1       : in  INTEGER range 0 to 9999;
             start2     : in  INTEGER range 0 to 9999;
-            end_val2   : in  INTEGER range 0 to 9999;
+            end2       : in  INTEGER range 0 to 9999;
             count1     : out INTEGER range 0 to 9999;
             count2     : out INTEGER range 0 to 9999
         );
@@ -33,9 +33,9 @@ architecture Behavioral of Test_Dual4DigitCounter is
     signal up1      : STD_LOGIC := '1';
     signal up2      : STD_LOGIC := '0';
     signal start1   : INTEGER := 3;
-    signal end_val1 : INTEGER := 8;
+    signal end1     : INTEGER := 8;
     signal start2   : INTEGER := 7;
-    signal end_val2 : INTEGER := 15;
+    signal end2     : INTEGER := 15;
     signal count1   : INTEGER range 0 to 9999;
     signal count2   : INTEGER range 0 to 9999;
 
@@ -50,9 +50,9 @@ begin
             up1        => up1,
             up2        => up2,
             start1     => start1,
-            end_val1   => end_val1,
+            end1       => end1,
             start2     => start2,
-            end_val2   => end_val2,
+            end2       => end2,
             count1     => count1,
             count2     => count2
         );
